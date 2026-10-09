@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>সন্ধান — জ্ঞান, প্রযুক্তি ও গবেষণার অনুসন্ধানে</title>
+
+  <meta name="description"
+        content="সন্ধান — Programming, ধর্মীয় বই, বিজ্ঞান, অর্থনীতি, সমাজ ও গবেষণাভিত্তিক বাংলা প্ল্যাটফর্ম।">
+  <meta name="theme-color" content="#176b5b">
+  <meta property="og:title" content="সন্ধান — জ্ঞান, প্রযুক্তি ও গবেষণার অনুসন্ধানে">
+  <meta property="og:description" content="Programming, বই, বিজ্ঞান, অর্থনীতি, সমাজ ও গবেষণার গুরুত্বপূর্ণ বিষয় সহজ ভাষায়।">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="site-logo.png">
+
+  <!-- Browser / Search favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #176b5b;
+      --primary-dark: #0e5145;
+      --accent: #e6b84a;
+      --dark: #17231f;
+      --text: #53615c;
+      --light: #f5f8f7;
+      --white: #ffffff;
+      --border: #e3ebe7;
+    }
+
+    body {
+      font-family: "Noto Sans Bengali", sans-serif;
+      background: #f8faf9;
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 5px 16px rgba(23,107,91,.16);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 15px;
+      font-weight: 600;
+      color: #374640;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--primary);
+      color: white;
+      width: 43px;
+      height: 43px;
+      border-radius: 10px;
+      font-size: 21px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 85% 20%,
+        rgba(230,184,74,.16),
+        transparent 25%),
+        linear-gradient(135deg,#eef7f4,#ffffff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px,5vw,64px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--text);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      padding: 12px 23px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .hero-card {
+      background: white;
+      padding: 36px;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(25,60,50,.10);
+    }
+
+    .hero-icon {
+      width: 72px;
+      height: 72px;
+      background: #eaf5f1;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      text-align: center;
+      margin: 0 auto 45px;
+    }
+
+    .small-title {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .section-heading h2 {
+      font-size: 34px;
+      margin: 6px 0;
+    }
+
+    .section-heading p {
+      color: var(--text);
+    }
+
+    /* ================= CATEGORIES ================= */
+
+    .categories {
+      background: white;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .category {
+      padding: 30px 24px;
+      border: 1px solid var(--border);
+      background: #f9fbfa;
+      border-radius: 19px;
+      transition: .3s;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(25,60,50,.08);
+      border-color: #b7d8ce;
+    }
+
+    .category-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .category p {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    /* ================= PROGRAMMING ================= */
+
+    .programming {
+      background: #f1f7f5;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 15px;
+    }
+
+    .language {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px 10px;
+      text-align: center;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .language:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(25,60,50,.08);
+    }
+
+    .language-icon {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* ================= POSTS ================= */
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .post {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(25,60,50,.09);
+    }
+
+    .post-image {
+      height: 190px;
+      display: grid;
+      place-items: center;
+      font-size: 55px;
+      background: #eaf4f1;
+    }
+
+    .post:nth-child(2) .post-image {
+      background: #f8f0dd;
+    }
+
+    .post:nth-child(3) .post-image {
+      background: #edf0f7;
+    }
+
+    .post-content {
+      padding: 23px;
+    }
+
+    .tag {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .post h3 {
+      font-size: 21px;
+      line-height: 1.45;
+      margin: 7px 0 10px;
+    }
+
+    .post p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 13px;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ================= RESEARCH ================= */
+
+    .research {
+      background: var(--primary);
+      color: white;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .research h2 {
+      font-size: 38px;
+      line-height: 1.35;
+      margin-bottom: 15px;
+    }
+
+    .research p {
+      color: #dcece7;
+    }
+
+    .research-box {
+      padding: 35px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.17);
+    }
+
+    .research-list {
+      list-style: none;
+    }
+
+    .research-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .research-list li:last-child {
+      border-bottom: 0;
+    }
+
+    /* ================= NEWSLETTER ================= */
+
+    .newsletter-box {
+      background: white;
+      padding: 50px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(25,60,50,.06);
+    }
+
+    .newsletter-box h2 {
+      font-size: 32px;
+    }
+
+    .newsletter-box p {
+      color: var(--text);
+      margin: 8px 0 25px;
+    }
+
+    .subscribe {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .subscribe input {
+      flex: 1;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .subscribe button {
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0 23px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .subscribe button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .subscribe-status {
+      min-height: 28px;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .subscribe-status.success { color: #176b5b; }
+    .subscribe-status.error { color: #b42318; }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #13201c;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #b9c9c4;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 20px;
+      text-align: center;
+      color: #91a39d;
+      font-size: 13px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:900px) {
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .language-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .category-grid,
+      .posts-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .language-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .newsletter-box {
+        padding: 30px 20px;
+      }
+
+      .subscribe {
+        flex-direction: column;
+      }
+
+      .subscribe button {
+        padding: 13px;
+      }
+
+      .research h2 {
+        font-size: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      <img class="logo-icon" src="site-logo.png" alt="সন্ধান লোগো">
+      <span>সন্ধান</span>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <nav id="menu">
+
+      <a href="#">হোম</a>
+
+      <a href="#programming">
+        Programming
+      </a>
+
+      <a href="#books">
+        ধর্মীয় বই
+      </a>
+
+      <a href="#academic">
+        Academic
+      </a>
+
+      <a href="#science">
+        বিজ্ঞান
+      </a>
+
+      <a href="#research">
+        গবেষণা
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <h1>
+        জ্ঞান অনুসন্ধানের
+        <span>নতুন ঠিকানা</span>
+      </h1>
+
+      <p>
+        Programming, বই, বিজ্ঞান, অর্থনীতি, সমাজ ও গবেষণার
+        গুরুত্বপূর্ণ বিষয়গুলো সহজ ভাষায় জানুন এবং নতুন কিছু শিখুন।
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#posts" class="btn btn-primary">
+          লেখা পড়ুন →
+        </a>
+
+        <a href="#categories" class="btn btn-light">
+          বিভাগ দেখুন
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="hero-icon">
+        🔎
+      </div>
+
+      <h3>
+        সন্ধান কী?
+      </h3>
+
+      <p>
+        তথ্যের ভিড়ে জ্ঞান, শিক্ষা ও গবেষণার
+        গুরুত্বপূর্ণ বিষয়গুলো সহজ ও সুন্দরভাবে
+        তুলে ধরাই আমাদের উদ্দেশ্য।
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories" id="categories">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        আমাদের বিষয়সমূহ
+      </div>
+
+      <h2>
+        বিভিন্ন জ্ঞানের এক ঠিকানা
+      </h2>
+
+      <p>
+        প্রযুক্তি থেকে গবেষণা—প্রয়োজনীয় বিষয়গুলো
+        এক জায়গায়।
+      </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+
+      <a href="#programming" class="category">
+
+        <div class="category-icon">
+          💻
+        </div>
+
+        <h3>
+          Programming
+        </h3>
+
+        <p>
+          Python, JavaScript, C, C++, Java, PHP,
+          Web Development ও অন্যান্য প্রযুক্তি।
+        </p>
+
+      </a>
+
+
+      <a href="#books" class="category">
+
+        <div class="category-icon">
+          📚
+        </div>
+
+        <h3>
+          ধর্মীয় বই
+        </h3>
+
+        <p>
+          ধর্মীয় ও জ্ঞানমূলক বইয়ের পরিচিতি,
+          আলোচনা ও পাঠ।
+        </p>
+
+      </a>
+
+
+      <a href="#science" class="category">
+
+        <div class="category-icon">
+          🔬
+        </div>
+
+        <h3>
+          বিজ্ঞান
+        </h3>
+
+        <p>
+          বিজ্ঞান ও প্রযুক্তির বিভিন্ন বিষয়
+          সহজ ভাষায় জানুন।
+        </p>
+
+      </a>
+
+
+      <a href="#economy" class="category">
+
+        <div class="category-icon">
+          📈
+        </div>
+
+        <h3>
+          অর্থনীতি
+        </h3>
+
+        <p>
+          অর্থনৈতিক বিষয়, তথ্য ও
+          বিশ্লেষণধর্মী লেখা।
+        </p>
+
+      </a>
+
+
+      <a href="#society" class="category">
+
+        <div class="category-icon">
+          👥
+        </div>
+
+        <h3>
+          সমাজ
+        </h3>
+
+        <p>
+          সামাজিক সমস্যা, পরিবর্তন ও
+          বিভিন্ন সামাজিক বিষয়।
+        </p>
+
+      </a>
+
+
+      <a href="#research" class="category">
+
+        <div class="category-icon">
+          🔎
+        </div>
+
+        <h3>
+          গবেষণা
+        </h3>
+
+        <p>
+          তথ্যভিত্তিক গবেষণা, বিশ্লেষণ ও
+          গুরুত্বপূর্ণ প্রতিবেদন।
+        </p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACADEMIC ================= -->
+
+<section class="categories" id="academic">
+  <div class="container">
+    <div class="section-heading">
+      <span class="small-title">ACADEMIC & EDUCATION</span>
+      <h2>একাডেমিক ও শিক্ষাসংক্রান্ত</h2>
+      <p>পড়াশোনা, পাঠ্যবই ও বিষয়ভিত্তিক জ্ঞান অর্জনের জন্য সহজবোধ্য শিক্ষামূলক কনটেন্ট।</p>
+    </div>
+
+    <div class="category-grid">
+      <article class="category">
+        <div class="category-icon">📚</div>
+        <h3>পাঠ্যবই ও একাডেমিক বই</h3>
+        <p>বিভিন্ন শ্রেণি ও শিক্ষাস্তরের প্রয়োজনীয় বই, বই পরিচিতি এবং রিভিউ।</p>
+      </article>
+      <article class="category">
+        <div class="category-icon">🎓</div>
+        <h3>শিক্ষা ও পড়াশোনা</h3>
+        <p>কার্যকর পড়াশোনার কৌশল, শেখার উপায় এবং শিক্ষাসংক্রান্ত পরামর্শ।</p>
+      </article>
+      <article class="category">
+        <div class="category-icon">💻</div>
+        <h3>কম্পিউটার সায়েন্স</h3>
+        <p>প্রোগ্রামিং, কম্পিউটার বিজ্ঞান ও প্রযুক্তির মৌলিক বিষয় সহজ ভাষায়।</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMMING ================= -->
+
+<section class="programming" id="programming">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        PROGRAMMING
+      </div>
+
+      <h2>
+        Programming শিখুন
+      </h2>
+
+      <p>
+        বিভিন্ন Programming Language ও
+        Software Development সম্পর্কে জানুন।
+      </p>
+
+    </div>
+
+
+    <div class="language-grid">
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          🐍
+        </span>
+
+        Python
+
+      </a>
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          🟨
+        </span>
+
+        JavaScript
+
+      </a>
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          C
+        </span>
+
+        C
+
+      </a>
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          C++
+        </span>
+
+        C++
+
+      </a>
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          ☕
+        </span>
+
+        Java
+
+      </a>
+
+
+      <a href="#" class="language">
+
+        <span class="language-icon">
+          PHP
+        </span>
+
+        PHP
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LATEST POSTS ================= -->
+
+<section id="posts">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div class="small-title">
+        সর্বশেষ প্রকাশনা
+      </div>
+
+      <h2>
+        নতুন লেখা
+      </h2>
+
+      <p>
+        আমাদের সর্বশেষ প্রকাশিত লেখা ও গবেষণা।
+      </p>
+
+    </div>
+
+
+    <div class="posts-grid">
+
+
+      <article class="post">
+
+        <div class="post-image">
+          💻
+        </div>
+
+        <div class="post-content">
+
+          <span class="tag">
+            PROGRAMMING
+          </span>
+
+          <h3>
+            Programming শেখার শুরু কোথা থেকে করবেন?
+          </h3>
+
+          <p>
+            নতুনদের জন্য Programming শেখার
+            প্রয়োজনীয় ধারণা ও নির্দেশনা।
+          </p>
+
+          <a href="#" class="read-more">
+            বিস্তারিত পড়ুন →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="post" id="books">
+
+        <div class="post-image">
+          📚
+        </div>
+
+        <div class="post-content">
+
+          <span class="tag">
+            বই
+          </span>
+
+          <h3>
+            জ্ঞান অর্জনে বই পড়ার গুরুত্ব
+          </h3>
+
+          <p>
+            একটি ভালো বই কীভাবে মানুষের চিন্তা,
+            জ্ঞান ও দৃষ্টিভঙ্গিকে সমৃদ্ধ করে।
+          </p>
+
+          <a href="#" class="read-more">
+            বিস্তারিত পড়ুন →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="post" id="science">
+
+        <div class="post-image">
+          🔬
+        </div>
+
+        <div class="post-content">
+
+          <span class="tag">
+            বিজ্ঞান
+          </span>
+
+          <h3>
+            বিজ্ঞান কীভাবে আমাদের জীবন বদলাচ্ছে?
+          </h3>
+
+          <p>
+            আধুনিক বিজ্ঞান ও প্রযুক্তির
+            প্রভাব আমাদের জীবনে।
+          </p>
+
+          <a href="#" class="read-more">
+            বিস্তারিত পড়ুন →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RESEARCH ================= -->
+
+<section class="research" id="research">
+
+  <div class="container research-grid">
+
+
+    <div>
+
+      <h2>
+        তথ্য নয়, বুঝে জানার চেষ্টা
+      </h2>
+
+      <p>
+        অর্থনীতি, সমাজ, বিজ্ঞান ও বিভিন্ন
+        গবেষণামূলক বিষয় তথ্য ও যুক্তির মাধ্যমে
+        সহজভাবে উপস্থাপন করার চেষ্টা করে
+        “সন্ধান”।
+      </p>
+
+    </div>
+
+
+    <div class="research-box">
+
+      <ul class="research-list">
+
+        <li>
+          ✓ তথ্যভিত্তিক গবেষণা
+        </li>
+
+        <li>
+          ✓ বিজ্ঞান ও প্রযুক্তি
+        </li>
+
+        <li>
+          ✓ অর্থনৈতিক বিশ্লেষণ
+        </li>
+
+        <li>
+          ✓ সামাজিক গবেষণা
+        </li>
+
+        <li>
+          ✓ বই ও জ্ঞানচর্চা
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="newsletter-box">
+
+      <h2>
+        নতুন লেখা পেতে সঙ্গে থাকুন
+      </h2>
+
+      <p>
+        নতুন প্রবন্ধ, গবেষণা ও শিক্ষামূলক
+        লেখা প্রকাশিত হলে জানতে সাবস্ক্রাইব করুন।
+      </p>
+
+      <form class="subscribe" id="subscribeForm">
+
+        <input
+          id="subscriberEmail"
+          type="email"
+          placeholder="আপনার ই-মেইল লিখুন"
+          autocomplete="email"
+          aria-label="ই-মেইল ঠিকানা"
+          required
+        >
+
+        <button id="subscribeButton" type="submit">
+          সাবস্ক্রাইব
+        </button>
+
+      </form>
+
+      <div id="subscribeStatus" class="subscribe-status" role="status" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          সন্ধান
+        </h3>
+
+        <p>
+          জ্ঞান, প্রযুক্তি ও গবেষণার
+          একটি বাংলা অনলাইন প্ল্যাটফর্ম।
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          বিভাগ
+        </h3>
+
+        <a href="#programming">
+          Programming
+        </a>
+
+        <a href="#books">
+          ধর্মীয় বই
+        </a>
+
+        <a href="#academic">
+          Academic
+        </a>
+
+        <a href="#science">
+          বিজ্ঞান
+        </a>
+
+        <a href="#research">
+          গবেষণা
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          গুরুত্বপূর্ণ
+        </h3>
+
+        <a href="#about">
+          About / আমাদের সম্পর্কে
+        </a>
+
+        <a href="#">
+          যোগাযোগ
+        </a>
+
+        <a href="#">
+          Privacy Policy
+        </a>
+
+        <a href="#">
+          Disclaimer
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          যোগাযোগ
+        </h3>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          LinkedIn
+        </a>
+
+        <a href="#">
+          YouTube
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 সন্ধান — সর্বস্বত্ব সংরক্ষিত।
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+
+  /* =========================================================
+     SUPABASE NEWSLETTER CONFIGURATION
+     ---------------------------------------------------------
+     Replace only the two values below with your Supabase
+     Project URL and Publishable/Anon Key.
+     NEVER put your service_role/secret key in this file.
+     ========================================================= */
+
+  const SUPABASE_URL = "YOUR_SUPABASE_URL";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+  const subscribeForm = document.getElementById("subscribeForm");
+  const emailInput = document.getElementById("subscriberEmail");
+  const subscribeButton = document.getElementById("subscribeButton");
+  const statusBox = document.getElementById("subscribeStatus");
+
+  subscribeForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const email = emailInput.value.trim().toLowerCase();
+    statusBox.textContent = "";
+    statusBox.className = "subscribe-status";
+
+    if (!emailInput.checkValidity()) {
+      statusBox.textContent = "দয়া করে একটি সঠিক ই-মেইল ঠিকানা দিন।";
+      statusBox.classList.add("error");
+      emailInput.focus();
+      return;
+    }
+
+    if (SUPABASE_URL === "YOUR_SUPABASE_URL" || SUPABASE_ANON_KEY === "YOUR_SUPABASE_ANON_KEY") {
+      statusBox.textContent = "Supabase সংযোগ এখনো সেট করা হয়নি। কোডে আপনার Project URL ও Publishable/Anon Key দিন।";
+      statusBox.classList.add("error");
+      return;
+    }
+
+    subscribeButton.disabled = true;
+    subscribeButton.textContent = "সংরক্ষণ হচ্ছে...";
+
+    try {
+      const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      const { error } = await client
+        .from("subscribers")
+        .insert([{ email }]);
+
+      if (error) {
+        if (error.code === "23505") {
+          statusBox.textContent = "এই ই-মেইলটি ইতিমধ্যে সাবস্ক্রাইব করা আছে।";
+        } else {
+          throw error;
+        }
+        statusBox.classList.add(error.code === "23505" ? "success" : "error");
+        return;
+      }
+
+      statusBox.textContent = "ধন্যবাদ! আপনার ই-মেইল সফলভাবে সাবস্ক্রাইব করা হয়েছে।";
+      statusBox.classList.add("success");
+      subscribeForm.reset();
+
+    } catch (error) {
+      console.error(error);
+      statusBox.textContent = "সাবস্ক্রাইব করা যায়নি। কিছুক্ষণ পর আবার চেষ্টা করুন।";
+      statusBox.classList.add("error");
+    } finally {
+      subscribeButton.disabled = false;
+      subscribeButton.textContent = "সাবস্ক্রাইব";
+    }
+  });
+
+</script>
+
+
+</body>
+</html>
