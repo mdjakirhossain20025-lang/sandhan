@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Calculus in Mathematics? Differentiation & Integration Formulas | সন্ধান</title>
+  <meta name="description" content="Learn what is calculus in mathematics, important differentiation formulas, and integration rules with easy Bangla and English explanations for students.">
+  <meta name="keywords" content="what is calculus in mathematics, differentiation formula, all integration and differentiation formulas pdf, calculus formulas in Bangla, integration formulas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.sandhan.blog/calculus.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Is Calculus in Mathematics? Differentiation & Integration Formulas">
+  <meta property="og:description" content="A student-friendly guide to calculus, differentiation, and integration formulas in Bangla and English.">
+  <meta property="og:url" content="https://www.sandhan.blog/calculus.html">
+  <meta name="theme-color" content="#101827">
+  <style>
+    :root {
+      --bg: #f4f8f5;
+      --panel: #ffffff;
+      --panel-2: #edf5f1;
+      --text: #172923;
+      --muted: #53675f;
+      --accent: #176f5e;
+      --accent-2: #176f5e;
+      --border: #dce8e2;
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Bengali", sans-serif;
+      line-height: 1.8;
+    }
+    a { color: var(--accent); }
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.96);
+    }
+    .nav {
+      max-width: 1100px; margin: auto; padding: 14px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-size: 1.15rem; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: .2px; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .94rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero {
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at top right, #f4f1df 0%, #eff7f3 48%, #f8fbf9 82%);
+    }
+    .hero-inner { max-width: var(--max); margin: auto; padding: 58px 22px 48px; }
+    .eyebrow {
+      display: inline-block; color: var(--accent); border: 1px solid #c8e0d6;
+      border-radius: 999px; padding: 3px 12px; font-size: .82rem; letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.18; margin: 18px 0; letter-spacing: -.035em; }
+    .hero p { max-width: 720px; color: var(--muted); font-size: 1.08rem; margin: 0; }
+    .meta-row { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted); font-size: .88rem; }
+    .meta-row span { border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; }
+    .layout { max-width: var(--max); margin: 0 auto; padding: 34px 22px 70px; }
+    .notice {
+      background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+      border-radius: 12px; padding: 16px 18px; color: var(--muted); margin-bottom: 28px;
+    }
+    .toc { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; margin-bottom: 36px; }
+    .toc h2 { margin-top: 0; font-size: 1.2rem; }
+    .toc ul { margin-bottom: 0; padding-left: 22px; columns: 2; }
+    .toc li { break-inside: avoid; margin: 4px 0; }
+    section { margin: 38px 0; scroll-margin-top: 24px; }
+    h2 { font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.35; margin-bottom: 12px; }
+    h3 { font-size: 1.18rem; margin-top: 26px; }
+    p { margin: 12px 0; }
+    .muted { color: var(--muted); }
+    .formula {
+      overflow-x: auto; text-align: center; background: #f8fbf9; border: 1px solid var(--border);
+      border-radius: 10px; padding: 15px; margin: 16px 0; font-family: "Cambria Math", Cambria, serif;
+      font-size: clamp(1.05rem, 3vw, 1.35rem); color: #172923;
+    }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; margin: 18px 0; }
+    table { border-collapse: collapse; width: 100%; min-width: 420px; background: var(--panel); }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: var(--panel-2); color: var(--accent); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    code { color: #b7d1ff; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .card h3 { margin-top: 0; }
+    .cta { background: linear-gradient(135deg, #edf7f2, #f8f8ee); border: 1px solid #d3e7dd; border-radius: 14px; padding: 22px; margin-top: 30px; }
+    .cta p { color: var(--muted); }
+    footer { border-top: 1px solid var(--border); color: var(--muted); text-align: center; padding: 24px 18px; font-size: .9rem; }
+    .lang-label { color: var(--accent-2); font-size: .84rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+    @media (max-width: 650px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px; }
+      .hero-inner { padding-top: 42px; }
+      .toc ul { columns: 1; }
+      .grid { grid-template-columns: 1fr; }
+      .layout { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What Is Calculus in Mathematics? Differentiation and Integration Formulas",
+    "description": "A student-friendly guide to calculus, differentiation, and integration formulas in Bangla and English.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.sandhan.blog/calculus.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ShopNir"
+    },
+    "inLanguage": ["en", "bn"]
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="application-name" content="সন্ধান">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="https://shopnir.site/">Shop<span>Nir</span></a>
+      <div class="nav-links">
+        <a href="https://shopnir.site/">Home</a>
+        <a href="https://shopnir.site/">Academic</a>
+        <a href="#bangla">বাংলা</a>
+        <a href="#english">English</a>
+      </div>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Academic · Mathematics</span>
+      <h1>What Is Calculus in Mathematics?</h1>
+      <p>A clear guide to calculus, differentiation formulas, and integration rules—with easy explanations in Bangla and English for students.</p>
+      <div class="meta-row">
+        <span>Study Guide</span><span>Bangla + English</span><span>Calculus Formulas</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <div class="notice">
+      <strong>In this article:</strong> Learn the basics of calculus, review important formulas, and find out which topics to include in an integration and differentiation formula PDF.
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#bangla">ক্যালকুলাস কী?</a></li>
+        <li><a href="#differentiation-bn">Differentiation সূত্র</a></li>
+        <li><a href="#integration-bn">Integration সূত্র</a></li>
+        <li><a href="#difference">Difference between both</a></li>
+        <li><a href="#english">What is calculus?</a></li>
+        <li><a href="#pdf">Formula PDF guide</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <section id="bangla">
+        <span class="lang-label">বাংলা গাইড</span>
+        <h2>ক্যালকুলাস কী? (What Is Calculus in Mathematics?)</h2>
+        <p>ক্যালকুলাস (Calculus) গণিতের একটি গুরুত্বপূর্ণ শাখা, যেখানে পরিবর্তনের হার এবং সঞ্চিত পরিমাণ নিয়ে আলোচনা করা হয়। পদার্থবিজ্ঞান, প্রকৌশল, অর্থনীতি এবং কম্পিউটার বিজ্ঞানে ক্যালকুলাসের ব্যবহার রয়েছে। এর দুটি প্রধান অংশ হলো <strong>Differentiation</strong> এবং <strong>Integration</strong>।</p>
+        <div class="grid">
+          <div class="card">
+            <h3>১. Differentiation</h3>
+            <p>কোনো ফাংশনের পরিবর্তনের হার বা বক্ররেখার ঢাল নির্ণয় করতে ব্যবহৃত হয়।</p>
+          </div>
+          <div class="card">
+            <h3>২. Integration</h3>
+            <p>সঞ্চিত পরিমাণ, নির্দিষ্ট শর্তে ক্ষেত্রফল এবং ডিফারেনশিয়েশনের বিপরীত প্রক্রিয়া নির্ণয়ে সাহায্য করে।</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="differentiation-bn">
+        <h2>Differentiation Formula — ডিফারেনশিয়েশনের সূত্র</h2>
+        <p>ডিফারেনশিয়েশন হলো কোনো ফাংশনের derivative নির্ণয়ের প্রক্রিয়া। একটি মৌলিক সূত্র হলো power rule:</p>
+        <div class="formula">d/dx (xⁿ) = nxⁿ⁻¹</div>
+        <p><strong>উদাহরণ:</strong> যদি y = x³ হয়, তাহলে dy/dx = 3x²।</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Derivative</th></tr></thead>
+            <tbody>
+              <tr><td>d/dx (c)</td><td>0</td></tr>
+              <tr><td>d/dx (xⁿ)</td><td>nxⁿ⁻¹</td></tr>
+              <tr><td>d/dx (sin x)</td><td>cos x</td></tr>
+              <tr><td>d/dx (cos x)</td><td>−sin x</td></tr>
+              <tr><td>d/dx (tan x)</td><td>sec² x</td></tr>
+              <tr><td>d/dx (eˣ)</td><td>eˣ</td></tr>
+              <tr><td>d/dx (ln x)</td><td>1/x</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Note: Trigonometric formulas assume x is measured in radians. In the power rule, n is a constant exponent.</p>
+      </section>
+
+      <section id="integration-bn">
+        <h2>Integration Formula — ইন্টিগ্রেশনের সূত্র</h2>
+        <p>ইন্টিগ্রেশন হলো integral নির্ণয়ের প্রক্রিয়া। অনির্দিষ্ট ইন্টিগ্রালে সাধারণত শেষে <em>+ C</em> যোগ করা হয়, যেখানে C হলো integration constant।</p>
+        <div class="formula">∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C, where n ≠ −1</div>
+        <p><strong>উদাহরণ:</strong> ∫ x² dx = x³/3 + C।</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Integral</th></tr></thead>
+            <tbody>
+              <tr><td>∫ 1 dx</td><td>x + C</td></tr>
+              <tr><td>∫ xⁿ dx</td><td>xⁿ⁺¹/(n + 1) + C, n ≠ −1</td></tr>
+              <tr><td>∫ 1/x dx</td><td>ln|x| + C</td></tr>
+              <tr><td>∫ eˣ dx</td><td>eˣ + C</td></tr>
+              <tr><td>∫ sin x dx</td><td>−cos x + C</td></tr>
+              <tr><td>∫ cos x dx</td><td>sin x + C</td></tr>
+              <tr><td>∫ sec² x dx</td><td>tan x + C</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Trigonometric integration formulas above also assume angles in radians.</p>
+      </section>
+
+      <section id="difference">
+        <h2>Differentiation ও Integration-এর পার্থক্য</h2>
+        <p>Differentiation পরিবর্তনের হার নির্ণয় করে। Integration সঞ্চিত পরিমাণ নির্ণয় করতে সাহায্য করে এবং অনেক ক্ষেত্রে differentiation-এর বিপরীত প্রক্রিয়া হিসেবে কাজ করে।</p>
+        <div class="formula">d/dx (x³) = 3x²</div>
+        <div class="formula">∫ 3x² dx = x³ + C</div>
+      </section>
+
+      <section id="english">
+        <span class="lang-label">English Guide</span>
+        <h2>What Is Calculus in Mathematics?</h2>
+        <p>Calculus is a branch of mathematics that studies change and accumulation. Its two main branches are differentiation and integration. Differentiation measures how quickly a function changes, while integration helps calculate accumulated quantities and areas under curves.</p>
+
+        <h3>Basic Differentiation Formulas</h3>
+        <p>The power rule states that the derivative of xⁿ is nxⁿ⁻¹. For example, if y = x⁴, then dy/dx = 4x³. Other useful rules include the derivatives of trigonometric, exponential, and logarithmic functions listed in the table above.</p>
+
+        <h3>Basic Integration Formulas</h3>
+        <p>Integration reverses differentiation in many common cases. For example, the integral of 3x² is x³ + C. Remember to include the constant of integration, C, when evaluating an indefinite integral.</p>
+
+        <h3>Why Should Students Learn Calculus?</h3>
+        <p>Calculus is useful in physics, engineering, economics, data science, and many university-level subjects. Understanding the meaning behind each formula is just as important as memorizing it. Practise with examples and check your answers by differentiating your integrals where appropriate.</p>
+      </section>
+
+      <section id="pdf">
+        <h2>All Integration and Differentiation Formulas PDF</h2>
+        <p>Students often search for <strong>all integration and differentiation formulas PDF</strong> to revise before exams. A helpful formula sheet should include:</p>
+        <ul>
+          <li>Basic differentiation and integration rules</li>
+          <li>Product rule, quotient rule, and chain rule</li>
+          <li>Trigonometric derivatives and integrals</li>
+          <li>Exponential and logarithmic formulas</li>
+          <li>Substitution and integration by parts</li>
+          <li>Definite integrals and common identities</li>
+        </ul>
+        <div class="cta">
+          <h3>প্রস্তাবিত শিক্ষামূলক রিসোর্স</h3>
+          <p>আরও পড়াশোনার উপকরণ খুঁজছেন? অতিরিক্ত শিক্ষামূলক রিসোর্স সম্পর্কে জানতে নিচের লিংকে ভিজিট করুন। কোনো ব্যক্তিগত তথ্য দেওয়া বা কেনাকাটা করার আগে লিংকটির গন্তব্য পেজ ভালোভাবে যাচাই করে নিন।</p>
+          <p><a href="https://rkmri.co/MRTlS2A0I5oS/" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;border-radius:8px;padding:11px 16px;background:#176f5e;color:#ffffff;font-weight:750;text-decoration:none;">প্রস্তাবিত রিসোর্স দেখুন ↗</a></p>
+          <p class="muted" style="font-size:.88rem;">অ্যাফিলিয়েট ডিসক্লেইমার: এই পোস্টে অ্যাফিলিয়েট লিংক থাকতে পারে। এসব লিংকের মাধ্যমে যোগ্য কোনো কেনাকাটা করলে আমরা কমিশন পেতে পারি। এতে আপনার অতিরিক্ত কোনো খরচ হবে না।</p>
+          <hr style="border:0;border-top:1px solid #293951;margin:20px 0;">
+          <h3>পুনরায় পড়ার জন্য এই গাইডটি সংরক্ষণ করুন</h3>
+          <p>পরীক্ষার প্রস্তুতি ও সূত্রগুলো পুনরায় অনুশীলনের জন্য এই পেজটি সংরক্ষণ করতে পারেন। আপনার ব্রাউজারের Print অপশন ব্যবহার করে পেজটি প্রিন্ট করুন অথবা PDF হিসেবে সেভ করুন।</p>
+          <button type="button" onclick="window.print()" style="border:0;border-radius:8px;padding:11px 16px;background:#176f5e;color:#ffffff;font-weight:750;cursor:pointer;">প্রিন্ট করুন / PDF হিসেবে সংরক্ষণ করুন</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p>Calculus is a fundamental topic in mathematics. Learning the basic differentiation formula and integration rules gives students a strong foundation for more advanced problems. Practise regularly, understand how each rule works, and use a formula sheet for quick revision.</p>
+        <p class="muted">Explore the Academic section of ShopNir for more learning resources.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> ShopNir · Academic Learning Resources</p>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
