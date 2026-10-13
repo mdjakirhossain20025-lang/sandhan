@@ -4,192 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unsubscribe | Sandhan</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <style>
     * { box-sizing: border-box; }
-
     body {
-      margin: 0;
-      min-height: 100vh;
-      padding: 20px;
-      display: grid;
-      place-items: center;
-      background: #f1f5f9;
-      font-family: Arial, sans-serif;
-      color: #1e293b;
+      margin: 0; min-height: 100vh; padding: 20px; display: grid; place-items: center;
+      background: #f1f5f9; font-family: Arial, sans-serif; color: #1e293b;
     }
-
     .card {
-      width: 100%;
-      max-width: 450px;
-      background: white;
-      padding: 35px 28px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 12px 40px #0f172a12;
+      width: 100%; max-width: 450px; background: white; padding: 35px 28px;
+      border-radius: 18px; text-align: center; box-shadow: 0 12px 40px #0f172a12;
     }
-
     .icon {
-      width: 68px;
-      height: 68px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: #fee2e2;
-      color: #dc2626;
-      font-size: 30px;
+      width: 68px; height: 68px; display: grid; place-items: center; margin: 0 auto 18px;
+      border-radius: 50%; background: #fee2e2; color: #dc2626; font-size: 30px;
     }
-
     h1 { font-size: 28px; margin: 0 0 10px; }
-
     p { color: #64748b; line-height: 1.8; }
-
-    label {
-      display: block;
-      text-align: left;
-      font-weight: 600;
-      margin: 20px 0 7px;
-    }
-
+    label { display: block; text-align: left; font-weight: 600; margin: 20px 0 7px; }
     input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #cbd5e1;
-      border-radius: 9px;
-      font: inherit;
+      width: 100%; padding: 13px; border: 1px solid #cbd5e1; border-radius: 9px; font: inherit;
     }
-
-    input:focus {
-      outline: 2px solid #fecaca;
-      border-color: #dc2626;
-    }
-
+    input:focus { outline: 2px solid #fecaca; border-color: #dc2626; }
     button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 16px;
-      border: 0;
-      border-radius: 9px;
-      background: #dc2626;
-      color: white;
-      font: inherit;
-      font-size: 17px;
-      font-weight: 600;
-      cursor: pointer;
+      width: 100%; padding: 13px; margin-top: 16px; border: 0; border-radius: 9px;
+      background: #dc2626; color: white; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer;
     }
-
     button:disabled { opacity: .6; cursor: wait; }
-
-    #message {
-      overflow-wrap: anywhere;
-      font-weight: 500;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 15px;
-      color: #16834a;
-      text-decoration: none;
-    }
+    #message { overflow-wrap: anywhere; font-weight: 500; }
+    a { display: inline-block; margin-top: 15px; color: #16834a; text-decoration: none; }
+    @media (max-width: 480px) { .card { padding: 30px 22px; } h1 { font-size: 24px; } }
   </style>
 </head>
-
 <body>
   <main class="card">
     <div class="icon" aria-hidden="true">✉</div>
-
     <h1>Unsubscribe from Emails</h1>
-
-    <p>
-      If you no longer wish to receive email updates from Sandhan Blog,
-      enter the email address you used to subscribe. We will guide you
-      through the unsubscribe confirmation process.
-    </p>
+    <p>If you no longer wish to receive email updates from Sandhan Blog, enter the email address you used to subscribe. Your request will be saved for review.</p>
 
     <form id="unsubscribeForm">
       <label for="email">Email Address</label>
-      <input
-        id="email"
-        type="email"
-        maxlength="254"
-        placeholder="Enter your email address"
-        autocomplete="email"
-        required
-      >
-
-      <button id="submitBtn" type="submit">
-        Request Unsubscription
-      </button>
+      <input id="email" name="email" type="email" maxlength="254"
+        placeholder="Enter your email address" autocomplete="email" required>
+      <button id="submitBtn" type="submit">Request Unsubscription</button>
     </form>
 
     <p id="message" role="status" aria-live="polite"></p>
-
     <a href="index.html">← Back to Home</a>
   </main>
 
   <script>
-    const SUPABASE_URL = "https://heklfjukzzbsiluczgnr.supabase.co";
-    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_v6yijK8jV0_7RUhXfGBjbQ_hemXUAC1";
+    // Keep your existing Supabase project URL and Publishable Key here.
+    const SUPABASE_URL = "https://zawtqhdicvvfbaidylbz.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ShSNyLKi2HG5AdVCcX6TVQ_aXMOqXoH";
 
-    const configured =
-      SUPABASE_URL.startsWith("https://") &&
-      !SUPABASE_URL.includes("YOUR_") &&
-      SUPABASE_PUBLISHABLE_KEY.length > 10 &&
-      !SUPABASE_PUBLISHABLE_KEY.includes("YOUR_");
-
-    const db = configured
-      ? window.supabase.createClient(
-          SUPABASE_URL,
-          SUPABASE_PUBLISHABLE_KEY
-        )
-      : null;
-
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
     const form = document.getElementById("unsubscribeForm");
     const button = document.getElementById("submitBtn");
     const message = document.getElementById("message");
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-
-      if (!db) {
-        message.style.color = "#b45309";
-        message.textContent =
-          "Please configure your Supabase Project URL and Publishable Key first.";
-        return;
-      }
-
-      const email = document.getElementById("email")
-        .value.trim().toLowerCase();
+      const email = document.getElementById("email").value.trim().toLowerCase();
 
       button.disabled = true;
       button.textContent = "Please wait...";
       message.textContent = "";
 
       try {
-        // This function must be deployed in Supabase first.
-        // It should send an email-verification link rather than
-        // deleting a subscriber directly from the browser.
-        const { error } = await db.functions.invoke(
-          "unsubscribe-request",
-          { body: { email } }
-        );
-
+        const { data, error } = await db.functions.invoke("unsubscribe-request", {
+          body: { email }
+        });
         if (error) throw error;
 
         message.style.color = "#16834a";
-        message.textContent =
-          "If this address is subscribed, you will receive instructions to confirm your unsubscribe request.";
+        message.textContent = "Your unsubscribe request has been submitted successfully.";
         form.reset();
-
       } catch (error) {
-        console.error(error);
+        console.error("Unsubscribe request error:", error);
         message.style.color = "#b91c1c";
-        message.textContent =
-          "The unsubscribe service is not configured yet. Please try again later.";
+        message.textContent = "Could not submit your request right now. Please try again later.";
       } finally {
         button.disabled = false;
         button.textContent = "Request Unsubscription";
