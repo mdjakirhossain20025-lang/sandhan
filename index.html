@@ -111,6 +111,49 @@
       color: var(--primary);
     }
 
+    .nav-dropdown {
+      position: relative;
+      font-size: 15px;
+      font-weight: 600;
+      color: #374640;
+    }
+
+    .nav-dropdown summary {
+      list-style: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: .25s;
+    }
+
+    .nav-dropdown summary::-webkit-details-marker { display: none; }
+    .nav-dropdown summary:hover,
+    .nav-dropdown[open] summary { color: var(--primary); }
+
+    .nav-submenu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 14px);
+      left: -14px;
+      min-width: 190px;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 14px 35px rgba(20,45,38,.13);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+    }
+
+    .nav-dropdown[open] .nav-submenu { display: flex; }
+    .nav-submenu a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-submenu a:hover { background: #f1f7f5; }
+
     .menu-btn {
       display: none;
       border: 0;
@@ -551,6 +594,22 @@
         display: flex;
       }
 
+      .nav-dropdown {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-dropdown summary { padding: 5px 0; }
+
+      .nav-submenu {
+        position: static;
+        min-width: 0;
+        width: 100%;
+        margin-top: 8px;
+        box-shadow: none;
+        background: #f8faf9;
+      }
+
       .menu-btn {
         display: block;
       }
@@ -670,9 +729,13 @@
         ধর্মীয় বই
       </a>
 
-      <a href="calculus.html">
-        Academic
-      </a>
+      <details class="nav-dropdown">
+        <summary>Academic <span aria-hidden="true">▾</span></summary>
+        <div class="nav-submenu">
+          <a href="calculus.html">Calculus formula</a>
+          <a href="ssc-2027-algebra-formula.html">Algebraic formula</a>
+        </div>
+      </details>
 
       <a href="#science">
         বিজ্ঞান
